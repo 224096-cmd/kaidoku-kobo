@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="light" />
+<meta name="theme-color" content="#fbfaf6" />
+<title>解読工房 — 暗号解読で学ぶ情報セキュリティ</title>
+<meta name="description" content="暗号を「解読する」体験を通して、情報セキュリティのしくみ（鍵・ハッシュ・RSA・計算量的安全性）を学ぶWeb教材。完全ローカル動作・無料。" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%232b50c8'/%3E%3Ctext x='16' y='23' font-size='20' text-anchor='middle' fill='white' font-family='serif'%3E%F0%9F%94%91%3C/text%3E%3C/svg%3E" />
+<link rel="stylesheet" href="assets/css/style.css?v=17" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="bar">
+    <a class="brand" href="#/home">
+      <span class="logo">解読工房</span>
+      <span class="sub">暗号解読で学ぶ情報セキュリティ</span>
+    </a>
+    <nav class="main" aria-label="メインナビ">
+      <a href="#/home">ホーム</a>
+      <a href="#/stage1">① シーザー</a>
+      <a href="#/stage2">② 換字式</a>
+      <a href="#/stage3">③ ハッシュ</a>
+      <a href="#/stage4">④ RSA</a>
+      <a href="#/exchange">✉ 送受信</a>
+      <a href="#/data">実験ノート（<span id="logCount">0</span>）</a>
+      <a href="#/about">About</a>
+      <a href="#/research" id="navResearch" hidden>研究</a>
+      <button id="lockBtn" class="lockbtn" type="button" title="ロックを解除" aria-label="研究モードの切り替え">🔒</button>
+    </nav>
+  </div>
+</header>
+
+<div id="researchBanner" class="research-banner" hidden>
+  <span>🔬 研究モード中（高度な設定・分析が使えます）</span>
+  <button id="exitResearch" type="button">一般モードに戻る</button>
+</div>
+
+<main class="wrap">
+  <div id="view" class="view"></div>
+</main>
+
+<footer class="site-footer">
+  <div class="inner">
+    解読工房 — 暗号解読で学ぶ情報セキュリティ教材。すべての計算はブラウザ内で完結し、入力は外部に送信されません。<br>
+    ソースコード：<a href="https://github.com/224096-cmd/kaidoku-kobo">github.com/224096-cmd/kaidoku-kobo</a>
+  </div>
+</footer>
+
+<noscript>
+  <p style="text-align:center;color:#c9372c;padding:20px">
+    この教材の動作には JavaScript が必要です。ブラウザの設定で JavaScript を有効にしてください。
+  </p>
+</noscript>
+
+<!-- QR生成（送受信のQR表示用／MITライセンス・同梱・オフライン可） -->
+<script defer src="assets/js/vendor/qrcode.js?v=17"></script>
+<!-- 読み込み順：app.js（基盤・ルーター）→ 各ステージ／ページ（ルート登録） -->
+<script defer src="assets/js/app.js?v=17"></script>
+<script defer src="assets/js/stage1.js?v=17"></script>
+<script defer src="assets/js/stage2.js?v=17"></script>
+<script defer src="assets/js/stage3.js?v=17"></script>
+<script defer src="assets/js/stage4.js?v=17"></script>
+<script defer src="assets/js/exchange.js?v=17"></script>
+<script defer src="assets/js/pages.js?v=17"></script>
+</body>
+</html>
